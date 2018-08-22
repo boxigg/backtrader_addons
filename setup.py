@@ -8,4 +8,7 @@ setup(name='backtrader_addons',
       author_email='',
       license='MIT',
       packages=['backtrader_addons'],
+	  install_requires=[
+		'backtrader',
+	  ],
       zip_safe=False)

@@ -266,3 +266,4 @@ __pycache__/
 /backtrader_addons.egg-info/top_level.txt
 /backtrader_addons.egg-info/dependency_links.txt
 /backtrader_addons.egg-info/not-zip-safe
+/backtrader_addons.egg-info/requires.txt

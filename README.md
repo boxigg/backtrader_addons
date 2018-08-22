@@ -4,7 +4,7 @@ Set of add-ons for [backtrader](http://www.backtrader.com) - Python trading stra
 
 ### Content
 
-- trade_list analyzer
+- trade_list analyzer [wiki](https://github.com/ab-trader/backtrader_addons/wiki/Trade-list-analyzer)
 
 ### Installation
 
