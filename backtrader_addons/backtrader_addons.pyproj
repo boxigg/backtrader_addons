@@ -24,6 +24,12 @@
     <Compile Include="analyzer_trade_list.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="data_alphavantage.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="indicator_alphavantage.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="__init__.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />

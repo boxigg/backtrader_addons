@@ -18,8 +18,42 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-__version__ = '0.2.5'
+import backtrader as bt
 
-from .analyzer_trade_list import *
-from .data_alphavantage import *
-from .indicator_alphavantage import *
+class Dividends(bt.Indicator):
+    """
+    Dividend indicator for alphavantage adjusted daily time series data feed
+    (AlphavantageCSVData)
+    """
+
+    lines = ('value', )
+
+    def __init__(self):
+
+        self.lines.value = self.data.div
+
+
+class Splits(bt.Indicator):
+    """
+    Split indicator for alphavantage adjusted daily time series data feed
+    (AlphavantageCSVData)
+    """
+
+    lines = ('ratio', )
+
+    def __init__(self):
+
+        self.lines.ratio = self.data.split
+
+
+class SplitAdjustedClose(bt.Indicator):
+    """
+    Split adjusted close indicator for alphavantage adjusted daily time series data feed
+    (AlphavantageCSVData)
+    """
+
+    lines = ('adj_close', )
+
+    def __init__(self):
+
+        self.lines.adj_close = self.data.adjclose
