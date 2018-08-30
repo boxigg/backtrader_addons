@@ -5,7 +5,7 @@ Set of add-ons for [backtrader](http://www.backtrader.com) - Python trading stra
 ### Content
 
 - trade_list analyzer [wiki](https://github.com/ab-trader/backtrader_addons/wiki/Trade-list-analyzer)
-- **NEW** Alphavantage adjusted daily time series CSV data feed aka `AlphavantageCSVData` [wiki] (https://github.com/ab-trader/backtrader_addons/wiki/Alphavantage-CSV-data-feed)
+- **NEW** Alphavantage adjusted daily time series CSV data feed aka `AlphavantageCSVData` [wiki](https://github.com/ab-trader/backtrader_addons/wiki/Alphavantage-CSV-data-feed)
 - **NEW** Dividends indicator for AlphavantageCSVData
 - **NEW** Splits indicator for AlphavantageCSVData
 - **NEW** Split-only adjusted close indicator for AlphavantageCSVData
