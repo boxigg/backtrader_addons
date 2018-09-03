@@ -18,8 +18,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-__version__ = '0.2.5'
+__version__ = '0.3.5'
 
 from .analyzer_trade_list import *
 from .data_alphavantage import *
-from .indicator_alphavantage import *

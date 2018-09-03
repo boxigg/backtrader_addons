@@ -23,44 +23,87 @@ import datetime
 import itertools
 
 
-class AlphavantageCSVData(bt.CSVDataBase):
-    """CSV data feed for alphavantage adjusted daily time series"""
-
-    lines = ('adjclose', 'div', 'split')
-
-    params = (('adjclose', 5), ('volume', 6), ('div', 7), ('split', 8),)
+class Alphavantage:
+    """Top level class for classes and methods related to Alphavantage data feed"""
 
 
-    def start(self):
+    class AlphavantageCSVData(bt.CSVDataBase):
+        """CSV data feed for Alphavantage adjusted daily time series"""
 
-        super(AlphavantageCSVData, self).start()
+        lines = ('adjclose', 'div', 'split')
 
-
-    def stop(self):
-
-        pass
+        params = (('adjclose', 5), ('volume', 6), ('div', 7), ('split', 8),)
 
 
-    def _loadline(self, linetokens):
+        def start(self):
 
-        i = itertools.count(0)
+            super(Alphavantage.AlphavantageCSVData, self).start()
 
-        dttxt = linetokens[next(i)]
-        y = int(dttxt[0:4])
-        m = int(dttxt[5:7])
-        d = int(dttxt[8:10])
 
-        dt = datetime.datetime(y, m, d)
-        dtnum = bt.date2num(dt)
+        def stop(self):
 
-        self.lines.datetime[0] = dtnum
-        self.lines.open[0] = float(linetokens[next(i)])
-        self.lines.high[0] = float(linetokens[next(i)])
-        self.lines.low[0] = float(linetokens[next(i)])
-        self.lines.close[0] = float(linetokens[next(i)])
-        self.lines.adjclose[0] = float(linetokens[next(i)])
-        self.lines.volume[0] = float(linetokens[next(i)])
-        self.lines.div[0] = float(linetokens[next(i)])
-        self.lines.split[0] = float(linetokens[next(i)])
+            pass
 
-        return True
+
+        def _loadline(self, linetokens):
+
+            i = itertools.count(0)
+
+            dttxt = linetokens[next(i)]
+            y = int(dttxt[0:4])
+            m = int(dttxt[5:7])
+            d = int(dttxt[8:10])
+
+            dt = datetime.datetime(y, m, d)
+            dtnum = bt.date2num(dt)
+
+            self.lines.datetime[0] = dtnum
+            self.lines.open[0] = float(linetokens[next(i)])
+            self.lines.high[0] = float(linetokens[next(i)])
+            self.lines.low[0] = float(linetokens[next(i)])
+            self.lines.close[0] = float(linetokens[next(i)])
+            self.lines.adjclose[0] = float(linetokens[next(i)])
+            self.lines.volume[0] = float(linetokens[next(i)])
+            self.lines.div[0] = float(linetokens[next(i)])
+            self.lines.split[0] = float(linetokens[next(i)])
+
+            return True
+
+
+    class Dividends(bt.Indicator):
+        """
+        Dividend indicator for alphavantage adjusted daily time series data feed
+        (AlphavantageCSVData)
+        """
+
+        lines = ('value', )
+
+        def __init__(self):
+
+            self.lines.value = self.data.div
+
+
+    class Splits(bt.Indicator):
+        """
+        Split indicator for alphavantage adjusted daily time series data feed
+        (AlphavantageCSVData)
+        """
+
+        lines = ('ratio', )
+
+        def __init__(self):
+
+            self.lines.ratio = self.data.split
+
+
+    class SplitAdjustedClose(bt.Indicator):
+        """
+        Split adjusted close indicator for alphavantage adjusted daily time series data feed
+        (AlphavantageCSVData)
+        """
+
+        lines = ('adj_close', )
+
+        def __init__(self):
+
+            self.lines.adj_close = self.data.adjclose

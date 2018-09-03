@@ -1,4 +1,4 @@
-## backtrader_addons 0.2.5
+## backtrader_addons 0.3.5
 
 Set of add-ons for [backtrader](http://www.backtrader.com) - Python trading strategy backtesting library.
 
