@@ -18,8 +18,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-__version__ = '0.5.8'
+from __future__ import (absolute_import, division, print_function,
+                        unicode_literals)
 
-from . import analyzers as analyzers
-from . import datafeeds as datafeeds
-from . import observers as observers
+from .drawdowns import *
