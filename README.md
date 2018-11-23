@@ -1,10 +1,10 @@
-## backtrader_addons 0.8.8
+## backtrader_addons 0.5.8
 
 Set of add-ons for [backtrader](http://www.backtrader.com) - Python trading strategy backtesting library.
 
 ### Content
 
-- modified observers related to drawdowns - drawdown in % and in $ as well as drawdown length
+- modified observers related to drawdowns - drawdown in % and in $ as well as drawdown length [wiki](https://github.com/ab-trader/backtrader_addons/wiki/Drawdown-observers)
 - trade_list analyzer [wiki](https://github.com/ab-trader/backtrader_addons/wiki/Trade-list-analyzer)
 - Alphavantage adjusted daily time series CSV data feed aka `AlphavantageCSVData` [wiki](https://github.com/ab-trader/backtrader_addons/wiki/Alphavantage-CSV-data-feed)
 - Dividends indicator for AlphavantageCSVData [wiki](https://github.com/ab-trader/backtrader_addons/wiki/Dividend-indicator-for-Alphavantage-data-feed)
